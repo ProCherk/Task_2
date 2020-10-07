@@ -10,41 +10,23 @@ namespace Task_2
         {
             Console.OutputEncoding = System.Text.Encoding.Unicode;
 
-            Console.WriteLine("Введіть змінну типу int");
-            Console.Write("a = ");
-            int a = Convert.ToInt32(Console.ReadLine());
-            
-
-            if ((a.GetType().ToString() != "System.Int32"))
+            try
             {
-                Console.WriteLine("Данні введені невірно");
-                Environment.Exit(0);
+                Console.WriteLine("Введiть змiнну типу int");
+                int a = Convert.ToInt32(Console.ReadLine());
+
+                Console.WriteLine("Введiть змiнну типу double");
+                double b = Convert.ToDouble(Console.ReadLine());
+
+                Console.WriteLine("Введiть змiнну типу long");
+                long c = Convert.ToInt64(Console.ReadLine());
+
+                Console.WriteLine($"a = {a}; b = {b}; c = {c}");
             }
-
-
-            Console.WriteLine("Введіть змінну типу double");
-            Console.Write("b = ");
-            double b = Convert.ToDouble(Console.ReadLine());
-
-            if ((b.GetType().ToString() != "System.Double"))
+            catch (System.FormatException)
             {
-                Console.WriteLine("Данні введені невірно");
-                Environment.Exit(0);
+                Console.WriteLine("Неправильний тип данних");
             }
-
-
-            Console.WriteLine("Введіть змінну типу long");
-            Console.Write("c = ");
-            long c = Convert.ToInt64(Console.ReadLine());
-
-            if ((c.GetType().ToString() != "System.Int64"))
-            {
-                Console.WriteLine("Данні введені невірно");
-                Environment.Exit(0);
-            }
-
-
-            Console.WriteLine($"a = {a}, b = {b}, c = {c}");
         }
     }
 }
